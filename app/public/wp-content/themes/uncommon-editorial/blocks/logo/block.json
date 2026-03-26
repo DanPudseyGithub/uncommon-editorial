@@ -1,0 +1,12 @@
+{
+  "apiVersion": 2,
+  "name": "uncommon-editorial/logo",
+  "title": "Uncommon Editorial Logo",
+  "category": "theme",
+  "icon": "format-image",
+  "render": "file:./render.php",
+  "supports": {
+    "html": false,
+    "customClassName": false
+  }
+}

@@ -1,0 +1,63 @@
+# Ignore everything by default
+/*
+!.gitignore
+
+# Whitelist top-level project directories
+!/app/
+!/conf/
+!/logs/
+
+# Inside app/, ignore everything except public/
+/app/*
+!/app/public/
+
+# Inside app/public/, ignore everything except wp-content/
+/app/public/*
+!/app/public/wp-content/
+
+# Inside wp-content/, ignore everything except themes, plugins, mu-plugins
+/app/public/wp-content/*
+!/app/public/wp-content/themes/
+!/app/public/wp-content/plugins/
+!/app/public/wp-content/mu-plugins/
+
+# Ignore default/example themes and plugins
+/app/public/wp-content/themes/twenty*/
+/app/public/wp-content/plugins/hello.php
+
+# Whitelist your specific theme and plugins
+!/app/public/wp-content/themes/uncommon-editorial/
+# !/app/public/wp-content/plugins/your-plugin-name/
+
+# Node.js / React ignores (inside your theme or plugins)
+node_modules/
+*.log
+npm-debug.log*
+yarn-debug.log*
+.eslintcache
+.stylelintcache
+/app/public/wp-content/themes/uncommon-editorial/build/
+/app/public/wp-content/themes/uncommon-editorial/dist/
+
+# Environment and IDE files
+.env
+.idea/
+.vscode/
+
+# WordPress sensitive/environment-specific files
+/app/public/wp-config.php
+*.sql
+*.sqlite
+
+# Uploads, cache, logs
+/app/public/wp-content/uploads/
+/app/public/wp-content/cache/
+/app/public/wp-content/wflogs/
+/logs/
+
+# SQL dumps
+/sql/
+
+# OS generated files
+.DS_Store
+Thumbs.db

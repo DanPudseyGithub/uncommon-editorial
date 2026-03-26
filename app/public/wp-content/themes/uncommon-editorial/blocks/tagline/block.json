@@ -1,0 +1,22 @@
+{
+  "apiVersion": 3,
+  "name": "uncommon-editorial/tagline",
+  "title": "Uncommon Editorial Tagline",
+  "category": "text",
+  "icon": "editor-quote",
+  "description": "Scrolling tagline with dynamic content types.",
+  "attributes": {
+    "intro": {
+      "type": "string",
+      "default": "Transforming complex science into compelling"
+    },
+    "words": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": ["stories", "campaigns", "content"]
+    }
+  },
+  "editorScript": "file:./build/index.js",
+  "style": "file:./style.css",
+  "render": "file:./render.php"
+}
