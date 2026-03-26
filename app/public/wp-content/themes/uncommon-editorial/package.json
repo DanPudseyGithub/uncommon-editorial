@@ -27,7 +27,8 @@
 		"extends @wordpress/browserslist-config"
 	],
   "scripts": {
-	"build-jsx": "node build-blocks.js",
+	"build-blocks": "node blocks-build.js",
+	"watch-blocks": "node blocks-watch.js",
     "build": "postcss style.css --use cssnano -o style.min.css --no-map",
     "watch": "postcss style.css --use cssnano -o style.min.css --no-map --watch"
   }
