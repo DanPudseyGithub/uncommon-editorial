@@ -1,0 +1,14 @@
+{
+  "apiVersion": 3,
+  "name": "uncommon-editorial/staff-list",
+  "title": "Staff List",
+  "category": "theme",
+  "icon": "groups",
+  "description": "Container for Staff Member blocks.",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "uncommon-editorial",
+  "editorScript": "file:./build/index.js",
+  "render": "file:./render.php"
+}

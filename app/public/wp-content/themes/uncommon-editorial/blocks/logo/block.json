@@ -4,6 +4,7 @@
   "title": "Uncommon Editorial Logo",
   "category": "theme",
   "icon": "format-image",
+  "editorScript": "file:./build/index.js",
   "render": "file:./render.php",
   "supports": {
     "html": false,

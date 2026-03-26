@@ -1,0 +1,34 @@
+{
+  "apiVersion": 3,
+  "name": "uncommon-editorial/content-block",
+  "title": "Content Block",
+  "category": "theme",
+  "icon": "text",
+  "description": "Heading, rich text body, items list and theme variant.",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "body": {
+      "type": "string",
+      "default": ""
+    },
+    "items": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": []
+    },
+    "theme": {
+      "type": "string",
+      "enum": ["theme-1", "theme-2"],
+      "default": "theme-1"
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "textdomain": "uncommon-editorial",
+  "editorScript": "file:./build/index.js",
+  "render": "file:./render.php"
+}

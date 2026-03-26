@@ -1,0 +1,20 @@
+{
+  "apiVersion": 3,
+  "name": "uncommon-editorial/testimonials",
+  "title": "Testimonials",
+  "category": "theme",
+  "icon": "format-quote",
+  "description": "Container for Testimonial blocks with a section heading.",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "textdomain": "uncommon-editorial",
+  "editorScript": "file:./build/index.js",
+  "render": "file:./render.php"
+}

@@ -1,0 +1,40 @@
+{
+  "apiVersion": 3,
+  "name": "uncommon-editorial/staff-member",
+  "title": "Staff Member",
+  "category": "theme",
+  "icon": "admin-users",
+  "description": "Individual staff member card with image, name, role and description.",
+  "parent": ["uncommon-editorial/staff-list"],
+  "attributes": {
+    "imageId": {
+      "type": "integer"
+    },
+    "imageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "imageAlt": {
+      "type": "string",
+      "default": ""
+    },
+    "name": {
+      "type": "string",
+      "default": ""
+    },
+    "role": {
+      "type": "string",
+      "default": ""
+    },
+    "description": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "textdomain": "uncommon-editorial",
+  "editorScript": "file:./build/index.js",
+  "render": "file:./render.php"
+}

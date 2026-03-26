@@ -1,0 +1,44 @@
+{
+  "apiVersion": 3,
+  "name": "uncommon-editorial/testimonial",
+  "title": "Testimonial",
+  "category": "theme",
+  "icon": "format-quote",
+  "description": "Individual testimonial with image, quote and attribution.",
+  "parent": ["uncommon-editorial/testimonials"],
+  "attributes": {
+    "imageId": {
+      "type": "integer"
+    },
+    "imageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "imageAlt": {
+      "type": "string",
+      "default": ""
+    },
+    "quote": {
+      "type": "string",
+      "default": ""
+    },
+    "author": {
+      "type": "string",
+      "default": ""
+    },
+    "role": {
+      "type": "string",
+      "default": ""
+    },
+    "organisation": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "textdomain": "uncommon-editorial",
+  "editorScript": "file:./build/index.js",
+  "render": "file:./render.php"
+}
