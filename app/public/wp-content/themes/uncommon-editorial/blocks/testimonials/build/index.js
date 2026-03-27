@@ -10,7 +10,7 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Edit)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -25,10 +25,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const ALLOWED_BLOCKS = ['uncommon-editorial/testimonial'];
-function Edit({
+const Edit = ({
   attributes,
   setAttributes
-}) {
+}) => {
   const {
     heading
   } = attributes;
@@ -55,7 +55,8 @@ function Edit({
     allowedBlocks: ALLOWED_BLOCKS,
     renderAppender: _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks.ButtonBlockAppender
   }))));
-}
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Edit);
 
 /***/ },
 

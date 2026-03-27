@@ -2,7 +2,7 @@ import { TextControl, Button, PanelBody } from '@wordpress/components';
 import { InspectorControls, useBlockProps, RichText, MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 
-export default function Edit( { attributes, setAttributes } ) {
+const Edit = ( { attributes, setAttributes } ) => {
 	const { imageId, imageUrl, imageAlt, quote, author, role, organisation } = attributes;
 	const blockProps = useBlockProps( { className: 'testimonial' } );
 
@@ -81,4 +81,6 @@ export default function Edit( { attributes, setAttributes } ) {
 			</div>
 		</>
 	);
-}
+};
+
+export default Edit;

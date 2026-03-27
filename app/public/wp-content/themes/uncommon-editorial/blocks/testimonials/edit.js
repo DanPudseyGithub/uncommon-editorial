@@ -4,7 +4,7 @@ import { __ } from '@wordpress/i18n';
 
 const ALLOWED_BLOCKS = [ 'uncommon-editorial/testimonial' ];
 
-export default function Edit( { attributes, setAttributes } ) {
+const Edit = ( { attributes, setAttributes } ) => {
 	const { heading } = attributes;
 	const blockProps = useBlockProps( { className: 'testimonials' } );
 
@@ -32,4 +32,6 @@ export default function Edit( { attributes, setAttributes } ) {
 			</div>
 		</>
 	);
-}
+};
+
+export default Edit;

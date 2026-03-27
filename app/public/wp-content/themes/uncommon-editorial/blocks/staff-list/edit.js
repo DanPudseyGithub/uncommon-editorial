@@ -2,7 +2,7 @@ import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 
 const ALLOWED_BLOCKS = [ 'uncommon-editorial/staff-member' ];
 
-export default function Edit() {
+const Edit = () => {
 	const blockProps = useBlockProps( { className: 'staff-list' } );
 
 	return (
@@ -13,4 +13,6 @@ export default function Edit() {
 			/>
 		</div>
 	);
-}
+};
+
+export default Edit;

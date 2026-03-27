@@ -2,7 +2,7 @@ import { TextControl, Button, PanelBody } from '@wordpress/components';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 
-export default function Edit({ attributes, setAttributes }) {
+const Edit = ( { attributes, setAttributes } ) => {
     const { intro = '', words = [] } = attributes;
     const blockProps = useBlockProps();
 
@@ -53,4 +53,6 @@ export default function Edit({ attributes, setAttributes }) {
             </div>
         </>
     );
-}
+};
+
+export default Edit;

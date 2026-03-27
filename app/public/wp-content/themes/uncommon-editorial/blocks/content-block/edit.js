@@ -2,7 +2,7 @@ import { TextControl, Button, PanelBody, SelectControl } from '@wordpress/compon
 import { InspectorControls, useBlockProps, RichText } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 
-export default function Edit( { attributes, setAttributes } ) {
+const Edit = ( { attributes, setAttributes } ) => {
 	const { heading, body, items, theme } = attributes;
 	const blockProps = useBlockProps( { className: 'content-block ' + theme } );
 
@@ -73,4 +73,6 @@ export default function Edit( { attributes, setAttributes } ) {
 			</div>
 		</>
 	);
-}
+};
+
+export default Edit;
