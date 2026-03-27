@@ -1,17 +1,14 @@
 {
-	"name": "twentytwentyfive",
-	"version": "1.4.0",
-	"description": "Default WP Theme",
-	"author": "The WordPress Contributors",
+	"name": "uncommon-editorial",
+	"version": "1.0.0",
+	"description": "Uncommon Editorial WordPress Theme",
+	"author": "Turtle Lasagne",
 	"license": "GPL-2.0-or-later",
 	"keywords": [
 		"WordPress",
 		"Theme"
 	],
-	"bugs": {
-		"url": "https://core.trac.wordpress.org/"
-	},
-	"homepage": "https://wordpress.org/themes/twentytwentyfive/",
+	"homepage": "",
 	"engines": {
 		"node": ">=20.10.0",
 		"npm": ">=10.2.3"
