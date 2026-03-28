@@ -1,4 +1,4 @@
-import { TextControl, Button, PanelBody, SelectControl } from '@wordpress/components';
+import { Button, PanelBody, SelectControl, TextControl } from '@wordpress/components';
 import { InspectorControls, useBlockProps, RichText } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 
@@ -37,11 +37,14 @@ const Edit = ( { attributes, setAttributes } ) => {
 			</InspectorControls>
 
 			<div { ...blockProps }>
-				<TextControl
-					label={ __( 'Heading', 'uncommon-editorial' ) }
+				<RichText
+					tagName="h2"
+					className="content-block__heading"
 					value={ heading }
 					onChange={ ( value ) => setAttributes( { heading: value } ) }
-					placeholder={ __( 'Enter heading…', 'uncommon-editorial' ) }
+					placeholder={ __( 'e.g. What we do', 'uncommon-editorial' ) }
+					allowedFormats={ [] }
+					disableLineBreaks
 				/>
 
 				<RichText
@@ -49,17 +52,19 @@ const Edit = ( { attributes, setAttributes } ) => {
 					className="content-block__body"
 					value={ body }
 					onChange={ ( value ) => setAttributes( { body: value } ) }
-					placeholder={ __( 'Enter body text…', 'uncommon-editorial' ) }
+					placeholder={ __( 'Enter body text...', 'uncommon-editorial' ) }
 				/>
 
 				<div style={ { marginTop: '16px' } }>
-					<strong>{ __( 'Items', 'uncommon-editorial' ) }</strong>
+					<div>
+						<strong>{ __( 'Services', 'uncommon-editorial' ) }</strong>
+					</div>
 					{ items.map( ( item, i ) => (
 						<div key={ i } style={ { display: 'flex', gap: '8px', marginTop: '8px' } }>
 							<TextControl
 								value={ item }
 								onChange={ ( value ) => updateItem( i, value ) }
-								placeholder={ __( 'Enter item…', 'uncommon-editorial' ) }
+								placeholder={ __( 'e.g. Magazines and books', 'uncommon-editorial' ) }
 							/>
 							<Button variant="secondary" onClick={ () => removeItem( i ) }>
 								{ __( 'Remove', 'uncommon-editorial' ) }
@@ -67,7 +72,7 @@ const Edit = ( { attributes, setAttributes } ) => {
 						</div>
 					) ) }
 					<Button variant="primary" onClick={ addItem } style={ { marginTop: '12px' } }>
-						{ __( 'Add Item', 'uncommon-editorial' ) }
+						{ __( 'Add service', 'uncommon-editorial' ) }
 					</Button>
 				</div>
 			</div>

@@ -28,7 +28,7 @@ $wrapper_attributes = get_block_wrapper_attributes( [ 'class' => 'staff-member' 
 			<p class="staff-member__role"><?php echo esc_html( $role ); ?></p>
 		<?php endif; ?>
 		<?php if ( $description ) : ?>
-			<div class="staff-member__description"><?php echo wp_kses_post( $description ); ?></div>
+			<div class="staff-member__description"><?php echo wpautop( str_replace( [ '<br>', '<br/>', '<br />' ], "\n\n", wp_kses_post( $description ) ) ); ?></div>
 		<?php endif; ?>
 	</div>
 

@@ -1,4 +1,4 @@
-import { TextControl, Button, PanelBody } from '@wordpress/components';
+import { Button, PanelBody } from '@wordpress/components';
 import { InspectorControls, useBlockProps, RichText, MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 
@@ -39,18 +39,6 @@ const Edit = ( { attributes, setAttributes } ) => {
 							) }
 						/>
 					</MediaUploadCheck>
-					<TextControl
-						label={ __( 'Name', 'uncommon-editorial' ) }
-						value={ name }
-						onChange={ ( value ) => setAttributes( { name: value } ) }
-						placeholder={ __( 'Full name…', 'uncommon-editorial' ) }
-					/>
-					<TextControl
-						label={ __( 'Role', 'uncommon-editorial' ) }
-						value={ role }
-						onChange={ ( value ) => setAttributes( { role: value } ) }
-						placeholder={ __( 'Job title…', 'uncommon-editorial' ) }
-					/>
 				</PanelBody>
 			</InspectorControls>
 
@@ -61,14 +49,30 @@ const Edit = ( { attributes, setAttributes } ) => {
 					</div>
 				) }
 				<div className="staff-member__info">
-					{ name && <h3 className="staff-member__name">{ name }</h3> }
-					{ role && <p className="staff-member__role">{ role }</p> }
+					<RichText
+						tagName="h3"
+						className="staff-member__name"
+						value={ name }
+						onChange={ ( value ) => setAttributes( { name: value } ) }
+						placeholder={ __( 'Full name...', 'uncommon-editorial' ) }
+						allowedFormats={ [] }
+						disableLineBreaks
+					/>
+					<RichText
+						tagName="p"
+						className="staff-member__role"
+						value={ role }
+						onChange={ ( value ) => setAttributes( { role: value } ) }
+						placeholder={ __( 'Job title...', 'uncommon-editorial' ) }
+						allowedFormats={ [] }
+						disableLineBreaks
+					/>
 					<RichText
 						tagName="div"
 						className="staff-member__description"
 						value={ description }
 						onChange={ ( value ) => setAttributes( { description: value } ) }
-						placeholder={ __( 'Enter description…', 'uncommon-editorial' ) }
+						placeholder={ __( 'Enter staff description...', 'uncommon-editorial' ) }
 					/>
 				</div>
 			</div>

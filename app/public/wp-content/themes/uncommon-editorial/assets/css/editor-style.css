@@ -1,8 +1,40 @@
-/*
- * Link styles
- * https://github.com/WordPress/gutenberg/issues/42319
- */
+:root {
+  --uncommon-editorial-primary: #ff9954;
+  --uncommon-editorial-secondary: #ffbf94;
+  --uncommon-editorial-black: #000000;
+  --uncommon-editorial-white: #ffffff;
+}
+
 a {
-	text-decoration-thickness: 1px !important;
-	text-underline-offset: .1em;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 0.1em;
+}
+
+.editor-styles-wrapper .components-button.is-primary {
+  background-color: var(--uncommon-editorial-primary);
+  color: var(--uncommon-editorial-black);
+  border: 1px solid var(--uncommon-editorial-primary);
+}
+.editor-styles-wrapper .components-button.is-primary:focus, .editor-styles-wrapper .components-button.is-primary:hover {
+  background-color: var(--uncommon-editorial-primary);
+  color: var(--uncommon-editorial-black);
+  border: 1px solid var(--uncommon-editorial-black);
+}
+.editor-styles-wrapper .components-button.is-primary:focus:not(:disabled) {
+  box-shadow: none;
+}
+.editor-styles-wrapper .components-text-control__input {
+  min-width: 220px;
+  min-height: 36px;
+}
+.editor-styles-wrapper .staff-member__description.rich-text {
+  white-space: normal !important;
+}
+.editor-styles-wrapper .staff-member__description br {
+  display: block !important;
+  padding-bottom: 1em !important;
+}
+.editor-styles-wrapper .block-editor-block-list__layout .block-editor-block-list__block {
+  padding: 20px;
+  border: 1px dotted indianred;
 }
