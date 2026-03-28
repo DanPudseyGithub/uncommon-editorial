@@ -16,5 +16,7 @@
   },
   "textdomain": "uncommon-editorial",
   "editorScript": "file:./build/index.js",
+  "style": "file:./build/style.css",
+  "editorStyle": "file:./build/editor.css",
   "render": "file:./render.php"
 }

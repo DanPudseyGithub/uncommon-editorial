@@ -22,29 +22,35 @@ if (fs.existsSync(scssDir)) {
 
 fs.readdirSync(blocksDir).forEach((blockName) => {
     const blockPath = path.join(blocksDir, blockName);
+    if (!fs.statSync(blockPath).isDirectory()) return;
+
+    const jsPath    = path.join(blockPath, 'src', 'scripts');
+    const scssPath  = path.join(blockPath, 'src', 'styles');
+    const buildPath = path.join(blockPath, 'build');
 
     // Build JS
-    const indexJs = path.join(blockPath, 'index.js');
+    const indexJs = path.join(jsPath, 'index.js');
     if (fs.existsSync(indexJs)) {
         console.log(`Building JS:   ${blockName}`);
-
-        const buildPath = path.join(blockPath, 'build');
         if (!fs.existsSync(buildPath)) fs.mkdirSync(buildPath);
 
-        const relIndexJs = path.relative(__dirname, indexJs);
+        const relIndexJs   = path.relative(__dirname, indexJs);
         const relBuildPath = path.relative(__dirname, buildPath);
 
         execSync(`npx wp-scripts build "${relIndexJs}" --output-path="${relBuildPath}"`, { stdio: 'inherit' });
     }
 
-    // Compile SCSS
-    fs.readdirSync(blockPath)
-        .filter((file) => path.extname(file) === '.scss')
-        .forEach((file) => {
-            const input = path.join(blockPath, file);
-            const output = path.join(blockPath, file.replace('.scss', '.css'));
-            console.log(`Compiling SCSS: ${blockName}/${file}`);
-            const result = sass.compile(input);
-            fs.writeFileSync(output, result.css);
-        });
+    // Compile SCSS from src/scss/ → build/
+    if (fs.existsSync(scssPath)) {
+        fs.readdirSync(scssPath)
+            .filter((file) => path.extname(file) === '.scss')
+            .forEach((file) => {
+                const input  = path.join(scssPath, file);
+                const output = path.join(buildPath, file.replace('.scss', '.css'));
+                console.log(`Compiling SCSS: ${blockName}/src/styles/${file} → build/${file.replace('.scss', '.css')}`);
+                if (!fs.existsSync(buildPath)) fs.mkdirSync(buildPath);
+                const result = sass.compile(input);
+                fs.writeFileSync(output, result.css);
+            });
+    }
 });

@@ -13,7 +13,8 @@ const debounce = (key, fn, delay = 150) => {
 };
 
 const buildJs = (blockName, blockPath) => {
-    const indexJs = path.join(blockPath, 'index.js');
+    const jsPath  = path.join(blockPath, 'src', 'scripts');
+    const indexJs = path.join(jsPath, 'index.js');
     if (!fs.existsSync(indexJs)) return;
 
     const buildPath = path.join(blockPath, 'build');
@@ -30,15 +31,19 @@ const buildJs = (blockName, blockPath) => {
     }
 };
 
-const buildScss = (scssPath) => {
-    const cssPath = scssPath.replace(/\.scss$/, '.css');
-    const label   = path.relative(__dirname, scssPath);
+const buildBlockScss = (blockName, blockPath, scssFile) => {
+    const buildPath = path.join(blockPath, 'build');
+    if (!fs.existsSync(buildPath)) fs.mkdirSync(buildPath);
+
+    const cssFile = path.basename(scssFile).replace(/\.scss$/, '.css');
+    const cssPath = path.join(buildPath, cssFile);
+    const label   = `${blockName}/src/styles/${path.basename(scssFile)}`;
 
     console.log(`[SCSS] Compiling ${label}...`);
     try {
-        const result = sass.compile(scssPath);
+        const result = sass.compile(scssFile);
         fs.writeFileSync(cssPath, result.css);
-        console.log(`[SCSS] Done → ${path.basename(cssPath)}`);
+        console.log(`[SCSS] Done → ${blockName}/build/${cssFile}`);
     } catch (err) {
         console.error(`[SCSS] Error in ${label}:\n       ${err.message}`);
     }
@@ -47,7 +52,6 @@ const buildScss = (scssPath) => {
 const scssDir = path.join(__dirname, 'assets/scss');
 const cssDir  = path.join(__dirname, 'assets/css');
 
-// Override buildScss for assets — output goes to assets/css, not alongside the source
 const buildAssetScss = (scssPath) => {
     const filename = path.basename(scssPath).replace(/\.scss$/, '.css');
     const cssPath  = path.join(cssDir, filename);
@@ -81,25 +85,29 @@ fs.readdirSync(blocksDir).forEach((blockName) => {
     const blockPath = path.join(blocksDir, blockName);
     if (!fs.statSync(blockPath).isDirectory()) return;
 
+    const jsPath   = path.join(blockPath, 'src', 'scripts');
+    const scssPath = path.join(blockPath, 'src', 'styles');
+
+    if (!fs.existsSync(jsPath) && !fs.existsSync(scssPath)) return;
+
     console.log(`  · ${blockName}`);
 
-    fs.watch(blockPath, { recursive: true }, (_, filename) => {
-        if (!filename) return;
+    if (fs.existsSync(jsPath)) {
+        fs.watch(jsPath, (_, filename) => {
+            if (!filename || path.extname(filename) !== '.js') return;
+            debounce(jsPath, () => buildJs(blockName, blockPath));
+        });
+    }
 
-        // Ignore compiled output
-        if (filename.startsWith('build')) return;
-
-        const fullPath = path.join(blockPath, filename);
-        const ext      = path.extname(filename);
-
-        if (ext === '.scss') {
+    if (fs.existsSync(scssPath)) {
+        fs.watch(scssPath, (_, filename) => {
+            if (!filename || path.extname(filename) !== '.scss') return;
+            const fullPath = path.join(scssPath, filename);
             debounce(fullPath, () => {
-                if (fs.existsSync(fullPath)) buildScss(fullPath);
+                if (fs.existsSync(fullPath)) buildBlockScss(blockName, blockPath, fullPath);
             });
-        } else if (ext === '.js') {
-            debounce(blockPath, () => buildJs(blockName, blockPath));
-        }
-    });
+        });
+    }
 });
 
 console.log('\nReady. Ctrl+C to stop.\n');
