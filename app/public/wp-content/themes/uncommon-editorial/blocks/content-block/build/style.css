@@ -4,6 +4,9 @@
   padding: 0 97px;
   gap: 40px;
 }
+.content-block.theme-2 {
+  margin-block-start: 40px;
+}
 .content-block__heading {
   margin: 0;
   width: 181px;

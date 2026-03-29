@@ -15,32 +15,38 @@ main {
 }
 
 // Components
-.site-header-outer {
-  position: relative;
-  background-color: brand-color('primary');
-  padding-top: 90px;
-  height: 800px;
-}
+.wp-site-blocks {
+  .site-header-outer {
+    position: relative;
+    display: block;
+    height: 800px;
+    background-color: brand-color('primary');
+    padding: 0;
+  }
 
-.site-header-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  justify-content: flex-start;
-  align-items: flex-start;
-  max-width: $max-component-width;
-  margin: auto;
-}
+  .site-header-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 90px;
+    max-width: $max-component-width;
+    margin: auto;
+  }
 
-.site-header-graphic {
-  position: absolute;
-  top: -100px;
-  left: 0;
-  right: 0;
-  width: 100%;
-  pointer-events: none;
-
-  svg {
+  .site-header-graphic {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
     width: 100%;
+    pointer-events: none;
+    max-width: none;
+
+    svg {
+      width: 100%;
+      height: auto;
+    }
   }
 }

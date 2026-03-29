@@ -3,7 +3,7 @@ $intro = $attributes['intro'] ?? '';
 $words = $attributes['words'] ?? [];
 
 if (count($words) > 0) {
-    $words[] = $words[0]; // duplicate first word for smooth looping
+  $words[] = $words[0]; // duplicate first word for smooth looping
 }
 ?>
 

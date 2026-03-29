@@ -91,31 +91,33 @@ body {
   background-color: #000000;
 }
 
-.site-header-outer {
+.wp-site-blocks .site-header-outer {
   position: relative;
-  background-color: #ff9954;
-  padding-top: 90px;
+  display: block;
   height: 800px;
+  background-color: #ff9954;
+  padding: 0;
 }
-
-.site-header-inner {
+.wp-site-blocks .site-header-inner {
   display: flex;
   flex-direction: column;
   gap: 0;
   justify-content: flex-start;
   align-items: flex-start;
+  padding-top: 90px;
   max-width: 1140px;
   margin: auto;
 }
-
-.site-header-graphic {
+.wp-site-blocks .site-header-graphic {
   position: absolute;
-  top: -100px;
+  top: -20px;
   left: 0;
   right: 0;
   width: 100%;
   pointer-events: none;
+  max-width: none;
 }
-.site-header-graphic svg {
+.wp-site-blocks .site-header-graphic svg {
   width: 100%;
+  height: auto;
 }

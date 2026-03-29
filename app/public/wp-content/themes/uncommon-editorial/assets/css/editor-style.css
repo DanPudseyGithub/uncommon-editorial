@@ -38,3 +38,6 @@ a {
   padding: 20px;
   border: 1px dotted indianred;
 }
+.editor-styles-wrapper .site-header-graphic {
+  display: none;
+}
