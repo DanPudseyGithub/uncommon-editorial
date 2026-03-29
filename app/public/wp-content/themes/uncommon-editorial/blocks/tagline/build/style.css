@@ -2,4 +2,23 @@
   font-family: "PP Neue Montreal";
   font-weight: 500;
   font-size: 24px;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.tagline__scroll-container {
+  overflow: hidden;
+  height: 1.2em;
+  display: inline-block;
+  vertical-align: bottom;
+}
+.tagline__words {
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+}
+.tagline__word {
+  display: block;
+  line-height: 1.2;
+  white-space: nowrap;
 }

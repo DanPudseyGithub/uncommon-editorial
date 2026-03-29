@@ -4,4 +4,26 @@
   font-family: $font-family-sans;
   font-weight: 500;
   font-size: 24px;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+
+  &__scroll-container {
+    overflow: hidden;
+    height: 1.2em;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+
+  &__words {
+    display: flex;
+    flex-direction: column;
+    will-change: transform;
+  }
+
+  &__word {
+    display: block;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
 }
