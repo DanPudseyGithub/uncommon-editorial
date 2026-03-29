@@ -1,2 +1,43 @@
+@use 'variables' as *;
+
 .content-block {
+  display: flex;
+  align-items: flex-start;
+  padding: 0 97px;
+  gap: 40px;
+
+  &__content-wrapper {
+  }
+
+  &__heading {
+    margin: 0;
+    width: 181px;
+  }
+
+  &__body {
+    padding-top: 8px;
+
+    &:first-child {
+      font-size: 22px;
+      line-height: 30.5px;
+      margin-bottom: 12px;
+    }
+  }
+
+  &.theme-1 {
+    .content-block__heading {
+      text-align: right;
+    }
+  }
+
+  &.theme-2 {
+    .content-block__header {
+      order: 2;
+    }
+
+    .content-block__content-wrapper {
+      order: 1;
+      text-align: right;
+    }
+  }
 }

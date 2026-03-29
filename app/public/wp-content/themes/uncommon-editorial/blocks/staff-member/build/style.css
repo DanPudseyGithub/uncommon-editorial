@@ -1,0 +1,36 @@
+.staff-member {
+  display: flex;
+  align-items: flex-start;
+  padding: 0 97px;
+  gap: 40px;
+}
+.staff-member__image {
+  width: 254px;
+  height: 254px;
+  aspect-ratio: 1/1;
+  margin-bottom: 10px;
+}
+.staff-member__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+}
+.staff-member__image img:nth-child(odd) {
+  mask-image: url("data:image/svg+xml,%3Csvg width='254' height='253' viewBox='0 0 254 253' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M254 0L0 7.5L11.5 252.5H246.5L254 0Z' fill='black'/%3E%3C/svg%3E");
+}
+.staff-member__image img:nth-child(even) {
+  mask-image: url("data:image/svg+xml,%3Csvg width='252' height='267' viewBox='0 0 252 267' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M252 12.9336L0 0L4.5 266.869L252 259.434V12.9336Z' fill='black'/%3E%3C/svg%3E");
+}
+.staff-member__name, .staff-member__role {
+  font-size: 18px;
+  line-height: 25px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.staff-member__role {
+  font-family: "PP Neue Montreal";
+  text-transform: uppercase;
+  font-weight: 800;
+}

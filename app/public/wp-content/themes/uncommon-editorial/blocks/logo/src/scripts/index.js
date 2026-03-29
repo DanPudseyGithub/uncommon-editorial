@@ -1,6 +1,6 @@
 import { registerBlockType } from '@wordpress/blocks';
 import { useBlockProps } from '@wordpress/block-editor';
-import metadata from './block.json';
+import metadata from '../../block.json';
 
 const Edit = () => {
 	const blockProps = useBlockProps();

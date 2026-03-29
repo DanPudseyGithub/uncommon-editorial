@@ -1,0 +1,60 @@
+@use 'sass:map';
+
+// ─── Brand Colours ────────────────────────────────────────────────────────────
+
+$brand-colors: (
+  'primary': #ff9954,
+  'secondary': #ffbf94,
+  'black': #000000,
+  'white': #ffffff,
+);
+
+@function brand-color($key) {
+  @if not map.has-key($brand-colors, $key) {
+    @error "Unknown brand colour: '#{$key}'. Available: #{map.keys($brand-colors)}";
+  }
+  @return map.get($brand-colors, $key);
+}
+
+// Usage: background-color: brand-color('primary');
+
+// ─── Spacing ──────────────────────────────────────────────────────────────────
+
+$spacing: (
+  'xs': 4px,
+  's': 8px,
+  'm': 16px,
+  'l': 24px,
+  'xl': 48px,
+  '2xl': 80px,
+  '3xl': 120px,
+);
+
+@function spacing($key) {
+  @if not map.has-key($spacing, $key) {
+    @error "Unknown spacing key: '#{$key}'. Available: #{map.keys($spacing)}";
+  }
+  @return map.get($spacing, $key);
+}
+
+// Usage: padding: spacing('m');
+//        margin: spacing('xl') spacing('l');
+
+// ─── Layout ───────────────────────────────────────────────────────────────────
+
+$layout: (
+  'container-max': 1200px,
+  'container-wide': 1440px,
+  'gutter': 24px,
+  'gutter-mobile': 16px,
+);
+
+@function layout($key) {
+  @if not map.has-key($layout, $key) {
+    @error "Unknown layout key: '#{$key}'. Available: #{map.keys($layout)}";
+  }
+  @return map.get($layout, $key);
+}
+
+// Usage: max-width: layout('container-max');
+//        padding-inline: layout('gutter');

@@ -1,0 +1,28 @@
+.content-block {
+  display: flex;
+  align-items: flex-start;
+  padding: 0 97px;
+  gap: 40px;
+}
+.content-block__heading {
+  margin: 0;
+  width: 181px;
+}
+.content-block__body {
+  padding-top: 8px;
+}
+.content-block__body:first-child {
+  font-size: 22px;
+  line-height: 30.5px;
+  margin-bottom: 12px;
+}
+.content-block.theme-1 .content-block__heading {
+  text-align: right;
+}
+.content-block.theme-2 .content-block__header {
+  order: 2;
+}
+.content-block.theme-2 .content-block__content-wrapper {
+  order: 1;
+  text-align: right;
+}

@@ -39,6 +39,13 @@ if ( ! function_exists( 'uncommon_editorial_enqueue_styles' ) ) :
 			'path',
 			get_parent_theme_file_path( $src )
 		);
+
+		wp_enqueue_style(
+			'uncommon-editorial-furniture',
+			get_parent_theme_file_uri( 'assets/css/furniture.css' ),
+			array(),
+			wp_get_theme()->get( 'Version' )
+		);
 	}
 endif;
 add_action( 'wp_enqueue_scripts', 'uncommon_editorial_enqueue_styles' );

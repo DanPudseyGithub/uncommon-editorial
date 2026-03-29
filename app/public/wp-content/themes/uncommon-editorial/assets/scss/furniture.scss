@@ -1,0 +1,46 @@
+@use 'variables' as *;
+@use './type/typography';
+
+html {
+  background-color: brand-color('primary');
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: brand-color('black');
+}
+
+main {
+}
+
+// Components
+.site-header-outer {
+  position: relative;
+  background-color: brand-color('primary');
+  padding-top: 90px;
+  height: 800px;
+}
+
+.site-header-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: $max-component-width;
+  margin: auto;
+}
+
+.site-header-graphic {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  pointer-events: none;
+
+  svg {
+    width: 100%;
+  }
+}

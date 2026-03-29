@@ -1,0 +1,9 @@
+.content-block {
+  display: block;
+}
+.content-block__heading {
+  width: auto;
+}
+.content-block.theme-1 .content-block__heading {
+  text-align: left;
+}

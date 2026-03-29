@@ -14,20 +14,21 @@
 		"npm": ">=10.2.3"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^27.1.0",
+		"@prettier/plugin-php": "^0.24.0",
 		"@wordpress/browserslist-config": "^6.34.0",
+		"@wordpress/scripts": "^27.1.0",
+		"cssnano": "^7.1.2",
 		"postcss": "^8.5.6",
 		"postcss-cli": "^11.0.1",
-		"cssnano": "^7.1.2",
 		"sass": "^1.86.0"
 	},
 	"browserslist": [
 		"extends @wordpress/browserslist-config"
 	],
-  "scripts": {
-	"build-blocks": "node blocks-build.js",
-	"watch-blocks": "node blocks-watch.js",
-    "build": "postcss style.css --use cssnano -o style.min.css --no-map",
-    "watch": "postcss style.css --use cssnano -o style.min.css --no-map --watch"
-  }
+	"scripts": {
+		"build-blocks": "node blocks-build.js",
+		"watch-blocks": "node blocks-watch.js",
+		"build": "postcss style.css --use cssnano -o style.min.css --no-map",
+		"watch": "postcss style.css --use cssnano -o style.min.css --no-map --watch"
+	}
 }

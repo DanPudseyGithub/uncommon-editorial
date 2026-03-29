@@ -1,2 +1,13 @@
 .content-block {
+  display: block;
+
+  &__heading {
+    width: auto;
+  }
+
+  &.theme-1 {
+    .content-block__heading {
+      text-align: left;
+    }
+  }
 }

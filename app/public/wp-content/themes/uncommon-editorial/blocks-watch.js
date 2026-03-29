@@ -3,7 +3,10 @@ const fs = require('fs');
 const path = require('path');
 const sass = require('sass');
 
-const blocksDir = path.join(__dirname, 'blocks');
+const blocksDir   = path.join(__dirname, 'blocks');
+const scssDir     = path.join(__dirname, 'assets/scss');
+const cssDir      = path.join(__dirname, 'assets/css');
+const sassOptions = { loadPaths: [scssDir] };
 
 // Debounce map — prevents multiple rapid saves triggering duplicate builds
 const timers = {};
@@ -41,16 +44,13 @@ const buildBlockScss = (blockName, blockPath, scssFile) => {
 
     console.log(`[SCSS] Compiling ${label}...`);
     try {
-        const result = sass.compile(scssFile);
+        const result = sass.compile(scssFile, sassOptions);
         fs.writeFileSync(cssPath, result.css);
         console.log(`[SCSS] Done → ${blockName}/build/${cssFile}`);
     } catch (err) {
         console.error(`[SCSS] Error in ${label}:\n       ${err.message}`);
     }
 };
-
-const scssDir = path.join(__dirname, 'assets/scss');
-const cssDir  = path.join(__dirname, 'assets/css');
 
 const buildAssetScss = (scssPath) => {
     const filename = path.basename(scssPath).replace(/\.scss$/, '.css');
@@ -59,7 +59,7 @@ const buildAssetScss = (scssPath) => {
 
     console.log(`[SCSS] Compiling ${label}...`);
     try {
-        const result = sass.compile(scssPath);
+        const result = sass.compile(scssPath, sassOptions);
         fs.writeFileSync(cssPath, result.css);
         console.log(`[SCSS] Done → assets/css/${filename}`);
     } catch (err) {

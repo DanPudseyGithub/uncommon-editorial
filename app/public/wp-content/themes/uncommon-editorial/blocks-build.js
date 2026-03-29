@@ -3,9 +3,10 @@ const fs = require('fs');
 const path = require('path');
 const sass = require('sass');
 
-const blocksDir = path.join(__dirname, 'blocks');
-const scssDir = path.join(__dirname, 'assets/scss');
-const cssDir  = path.join(__dirname, 'assets/css');
+const blocksDir  = path.join(__dirname, 'blocks');
+const scssDir    = path.join(__dirname, 'assets/scss');
+const cssDir     = path.join(__dirname, 'assets/css');
+const sassOptions = { loadPaths: [scssDir] };
 
 // Compile all SCSS files from assets/scss into assets/css
 if (fs.existsSync(scssDir)) {
@@ -15,7 +16,7 @@ if (fs.existsSync(scssDir)) {
             const input  = path.join(scssDir, file);
             const output = path.join(cssDir, file.replace('.scss', '.css'));
             console.log(`Compiling SCSS: assets/scss/${file} → assets/css/${file.replace('.scss', '.css')}`);
-            const result = sass.compile(input);
+            const result = sass.compile(input, sassOptions);
             fs.writeFileSync(output, result.css);
         });
 }
@@ -49,7 +50,7 @@ fs.readdirSync(blocksDir).forEach((blockName) => {
                 const output = path.join(buildPath, file.replace('.scss', '.css'));
                 console.log(`Compiling SCSS: ${blockName}/src/styles/${file} → build/${file.replace('.scss', '.css')}`);
                 if (!fs.existsSync(buildPath)) fs.mkdirSync(buildPath);
-                const result = sass.compile(input);
+                const result = sass.compile(input, sassOptions);
                 fs.writeFileSync(output, result.css);
             });
     }
