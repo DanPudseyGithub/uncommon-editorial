@@ -1,0 +1,18 @@
+.section-testimonials {
+  max-width: none !important;
+  margin-inline: 0 !important;
+  padding: 0 !important;
+  background-color: #ffbf94;
+  margin-top: 80px;
+}
+
+.testimonials {
+  padding: 40px 0;
+  width: 100%;
+  overflow-x: auto;
+}
+.testimonials__grid {
+  display: flex;
+  gap: 20px;
+  padding-inline: max(20px, (100vw - 1140px) / 2);
+}

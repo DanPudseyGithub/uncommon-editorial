@@ -1,2 +1,30 @@
+@use 'variables' as *;
+
+.section-testiminal {
+  max-width: $max-component-width;
+}
+
 .testimonial {
+  background-color: brand-color('white');
+  padding: 0;
+  width: unset;
+  margin: 0;
+
+  &__image {
+    max-width: 320px;
+  }
+
+  blockquote {
+    position: relative;
+
+    &::before {
+      content: '"';
+      color: brand-color('primary');
+      font-size: 70px;
+      position: absolute;
+      left: -40px;
+      top: -20px;
+      font-family: cursive;
+    }
+  }
 }

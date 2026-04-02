@@ -14,10 +14,24 @@
 .content-block__body {
   padding-top: 8px;
 }
-.content-block__body:first-child {
+.content-block__body:first-child p strong {
   font-size: 22px;
   line-height: 30.5px;
   margin-bottom: 12px;
+}
+.content-block__body p {
+  text-wrap: balance;
+}
+.content-block__items {
+  margin: 0;
+  padding: 0;
+  column-count: 2;
+}
+.content-block__item {
+  list-style-type: none;
+  padding: 0;
+  margin-left: 0;
+  margin-bottom: 10px;
 }
 .content-block.theme-1 .content-block__heading {
   text-align: right;

@@ -1,6 +1,12 @@
 @use 'variables' as *;
 @use './fonts';
 
+html,
+body {
+  font-family: $font-family-sans;
+  font-weight: 400;
+}
+
 h1,
 h2,
 h3,
@@ -18,15 +24,11 @@ h2 {
   font-size: 64px;
 }
 
-%font-base {
-  font-size: 18px;
-  line-height: 25px;
-}
-
 p,
 ul,
 ol,
-li {
+li,
+blockquote {
   color: brand-color('white');
   @extend %font-base;
 }
@@ -36,6 +38,11 @@ p {
 }
 
 b,
-strong {
+strong,
+cite {
   font-weight: 800;
+}
+
+cite {
+  font-style: normal;
 }

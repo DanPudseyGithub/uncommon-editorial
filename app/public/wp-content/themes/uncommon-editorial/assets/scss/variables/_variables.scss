@@ -7,6 +7,8 @@ $brand-colors: (
   'secondary': #ffbf94,
   'black': #000000,
   'white': #ffffff,
+  'scrollbar-primary': '#D37D14',
+  'scrollbar-secondary': '#CB9F58',
 );
 
 @function brand-color($key) {

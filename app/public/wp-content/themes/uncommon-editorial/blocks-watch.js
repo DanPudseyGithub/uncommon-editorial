@@ -2,11 +2,22 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 const sass = require('sass');
+const browserSync = require('browser-sync').create();
 
 const blocksDir   = path.join(__dirname, 'blocks');
 const scssDir     = path.join(__dirname, 'assets/scss');
 const cssDir      = path.join(__dirname, 'assets/css');
 const sassOptions = { loadPaths: [scssDir] };
+
+// Change this to match your Local site URL
+const PROXY_URL = 'localhost:10005';
+
+browserSync.init({
+    proxy: PROXY_URL,
+    injectChanges: false,
+    open: false,
+    notify: false,
+});
 
 // Debounce map — prevents multiple rapid saves triggering duplicate builds
 const timers = {};
@@ -47,6 +58,7 @@ const buildBlockScss = (blockName, blockPath, scssFile) => {
         const result = sass.compile(scssFile, sassOptions);
         fs.writeFileSync(cssPath, result.css);
         console.log(`[SCSS] Done → ${blockName}/build/${cssFile}`);
+        browserSync.reload();
     } catch (err) {
         console.error(`[SCSS] Error in ${label}:\n       ${err.message}`);
     }
@@ -62,22 +74,28 @@ const buildAssetScss = (scssPath) => {
         const result = sass.compile(scssPath, sassOptions);
         fs.writeFileSync(cssPath, result.css);
         console.log(`[SCSS] Done → assets/css/${filename}`);
+        browserSync.reload();
     } catch (err) {
         console.error(`[SCSS] Error in ${label}:\n       ${err.message}`);
     }
 };
 
+// Compile all non-partial entry-point scss files in assets/scss root
+const buildAllAssetScss = () => {
+    fs.readdirSync(scssDir)
+        .filter((f) => f.endsWith('.scss') && !f.startsWith('_'))
+        .forEach((f) => buildAssetScss(path.join(scssDir, f)));
+};
+
 console.log('Watching blocks and assets for changes...\n');
 
-// Watch assets/scss for changes
+// Watch assets/scss recursively so subdirectory changes (type/, variables/) are caught.
+// Any change in the tree rebuilds all entry points.
 if (fs.existsSync(scssDir)) {
     console.log('  · assets/scss');
-    fs.watch(scssDir, (_, filename) => {
+    fs.watch(scssDir, { recursive: true }, (_, filename) => {
         if (!filename || path.extname(filename) !== '.scss') return;
-        const fullPath = path.join(scssDir, filename);
-        debounce(fullPath, () => {
-            if (fs.existsSync(fullPath)) buildAssetScss(fullPath);
-        });
+        debounce('asset-scss', buildAllAssetScss);
     });
 }
 

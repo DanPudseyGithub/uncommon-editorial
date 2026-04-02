@@ -13,7 +13,7 @@
     "words": {
       "type": "array",
       "items": { "type": "string" },
-      "default": ["stories", "campaigns", "content"]
+      "default": ["content", "magazines", "books"]
     }
   },
   "editorScript": "file:./build/index.js",

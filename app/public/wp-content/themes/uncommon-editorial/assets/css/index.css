@@ -1,3 +1,62 @@
+p,
+ul,
+ol,
+li,
+blockquote {
+  font-size: 18px;
+  line-height: 25px;
+}
+
+html {
+  background-color: #ff9954;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #000000;
+}
+
+main {
+  padding: 0 !important;
+}
+
+.wp-site-blocks .site-header-outer {
+  position: relative;
+  display: block;
+  height: 840px;
+  background-color: #ff9954;
+  padding: 0;
+}
+.wp-site-blocks .site-header-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 90px;
+  max-width: 1140px;
+  margin: auto;
+}
+.wp-site-blocks .site-header-graphic {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  pointer-events: none;
+  max-width: none;
+}
+.wp-site-blocks .site-header-graphic svg {
+  width: 100%;
+  height: auto;
+}
+
+blockquote {
+  padding: 0;
+  margin: 0;
+}
+
 @font-face {
   font-family: "PP Neue Montreal";
   src: url("PPNeueMontreal-Bold.woff2") format("woff2"), url("PPNeueMontreal-Bold.woff") format("woff");
@@ -40,6 +99,12 @@
   font-style: italic;
   font-display: swap;
 }
+html,
+body {
+  font-family: "PP Neue Montreal";
+  font-weight: 400;
+}
+
 h1,
 h2,
 h3,
@@ -60,15 +125,8 @@ h2 {
 p,
 ul,
 ol,
-li {
-  font-size: 18px;
-  line-height: 25px;
-}
-
-p,
-ul,
-ol,
-li {
+li,
+blockquote {
   color: #ffffff;
 }
 
@@ -77,47 +135,11 @@ p {
 }
 
 b,
-strong {
+strong,
+cite {
   font-weight: 800;
 }
 
-html {
-  background-color: #ff9954;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  background-color: #000000;
-}
-
-.wp-site-blocks .site-header-outer {
-  position: relative;
-  display: block;
-  height: 800px;
-  background-color: #ff9954;
-  padding: 0;
-}
-.wp-site-blocks .site-header-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding-top: 90px;
-  max-width: 1140px;
-  margin: auto;
-}
-.wp-site-blocks .site-header-graphic {
-  position: absolute;
-  top: -20px;
-  left: 0;
-  right: 0;
-  width: 100%;
-  pointer-events: none;
-  max-width: none;
-}
-.wp-site-blocks .site-header-graphic svg {
-  width: 100%;
-  height: auto;
+cite {
+  font-style: normal;
 }

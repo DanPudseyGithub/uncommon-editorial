@@ -1,2 +1,16 @@
+@use 'variables' as *;
+
+.section-testimonials {
+  background-color: brand-color('white');
+  margin-top: 0;
+}
+
 .testimonials {
+  padding: 0;
+  width: unset;
+  margin: auto;
+
+  &__grid {
+    display: block;
+  }
 }

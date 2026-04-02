@@ -1,0 +1,25 @@
+.section-testiminal {
+  max-width: 1140px;
+}
+
+.testimonial {
+  background-color: #ffffff;
+  padding: 0;
+  width: unset;
+  margin: 0;
+}
+.testimonial__image {
+  max-width: 320px;
+}
+.testimonial blockquote {
+  position: relative;
+}
+.testimonial blockquote::before {
+  content: '"';
+  color: #ff9954;
+  font-size: 70px;
+  position: absolute;
+  left: -40px;
+  top: -20px;
+  font-family: cursive;
+}

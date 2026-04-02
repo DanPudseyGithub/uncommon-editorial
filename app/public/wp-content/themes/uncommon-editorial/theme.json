@@ -695,6 +695,11 @@
 			"area": "footer",
 			"name": "footer",
 			"title": "Footer"
+		},
+		{
+			"area": "uncategorized",
+			"name": "testimonials",
+			"title": "Testimonials"
 		}
 	],
 	"customTemplates": [

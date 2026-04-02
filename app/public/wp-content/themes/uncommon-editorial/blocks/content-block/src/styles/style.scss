@@ -22,10 +22,31 @@
     padding-top: 8px;
 
     &:first-child {
-      font-size: 22px;
-      line-height: 30.5px;
-      margin-bottom: 12px;
+      p {
+        strong {
+          font-size: 22px;
+          line-height: 30.5px;
+          margin-bottom: 12px;
+        }
+      }
     }
+
+    p {
+      text-wrap: balance;
+    }
+  }
+
+  &__items {
+    margin: 0;
+    padding: 0;
+    column-count: 2;
+  }
+
+  &__item {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 0;
+    margin-bottom: 10px;
   }
 
   &.theme-1 {

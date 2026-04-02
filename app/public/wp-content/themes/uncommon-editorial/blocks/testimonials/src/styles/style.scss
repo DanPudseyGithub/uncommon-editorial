@@ -1,2 +1,21 @@
+@use 'variables' as *;
+
+.section-testimonials {
+  max-width: none !important;
+  margin-inline: 0 !important;
+  padding: 0 !important;
+  background-color: brand-color('secondary');
+  margin-top: 80px;
+}
+
 .testimonials {
+  padding: 40px 0;
+  width: 100%;
+  overflow-x: auto;
+
+  &__grid {
+    display: flex;
+    gap: 20px;
+    padding-inline: max(20px, calc((100vw - #{$max-component-width}) / 2));
+  }
 }

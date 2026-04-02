@@ -1,0 +1,13 @@
+.section-testimonials {
+  background-color: #ffffff;
+  margin-top: 0;
+}
+
+.testimonials {
+  padding: 0;
+  width: unset;
+  margin: auto;
+}
+.testimonials__grid {
+  display: block;
+}

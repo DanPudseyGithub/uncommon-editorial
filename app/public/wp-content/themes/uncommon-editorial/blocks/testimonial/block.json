@@ -29,10 +29,6 @@
     "role": {
       "type": "string",
       "default": ""
-    },
-    "organisation": {
-      "type": "string",
-      "default": ""
     }
   },
   "supports": {
