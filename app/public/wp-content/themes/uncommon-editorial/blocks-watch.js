@@ -27,19 +27,21 @@ const debounce = (key, fn, delay = 150) => {
 };
 
 const buildJs = (blockName, blockPath) => {
-    const jsPath  = path.join(blockPath, 'src', 'scripts');
-    const indexJs = path.join(jsPath, 'index.js');
-    if (!fs.existsSync(indexJs)) return;
+    const jsPath = path.join(blockPath, 'src', 'scripts');
+    if (!fs.existsSync(jsPath)) return;
+
+    const jsFiles = fs.readdirSync(jsPath).filter((f) => f.endsWith('.js') && !f.startsWith('_'));
+    if (jsFiles.length === 0) return;
 
     const buildPath = path.join(blockPath, 'build');
     if (!fs.existsSync(buildPath)) fs.mkdirSync(buildPath);
 
-    const relInput  = path.relative(__dirname, indexJs);
+    const relInputs = jsFiles.map((f) => `"${path.relative(__dirname, path.join(jsPath, f))}"`).join(' ');
     const relOutput = path.relative(__dirname, buildPath);
 
     console.log(`[JS]   Building ${blockName}...`);
     try {
-        execSync(`npx wp-scripts build "${relInput}" --output-path="${relOutput}"`, { stdio: 'inherit' });
+        execSync(`npx wp-scripts build ${relInputs} --output-path="${relOutput}"`, { stdio: 'inherit' });
     } catch {
         console.error(`[JS]   Build failed: ${blockName}`);
     }

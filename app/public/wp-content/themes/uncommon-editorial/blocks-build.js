@@ -30,15 +30,17 @@ fs.readdirSync(blocksDir).forEach((blockName) => {
     const buildPath = path.join(blockPath, 'build');
 
     // Build JS
-    const indexJs = path.join(jsPath, 'index.js');
-    if (fs.existsSync(indexJs)) {
-        console.log(`Building JS:   ${blockName}`);
-        if (!fs.existsSync(buildPath)) fs.mkdirSync(buildPath);
+    if (fs.existsSync(jsPath)) {
+        const jsFiles = fs.readdirSync(jsPath).filter((f) => f.endsWith('.js') && !f.startsWith('_'));
+        if (jsFiles.length > 0) {
+            console.log(`Building JS:   ${blockName}`);
+            if (!fs.existsSync(buildPath)) fs.mkdirSync(buildPath);
 
-        const relIndexJs   = path.relative(__dirname, indexJs);
-        const relBuildPath = path.relative(__dirname, buildPath);
+            const relInputs    = jsFiles.map((f) => `"${path.relative(__dirname, path.join(jsPath, f))}"`).join(' ');
+            const relBuildPath = path.relative(__dirname, buildPath);
 
-        execSync(`npx wp-scripts build "${relIndexJs}" --output-path="${relBuildPath}"`, { stdio: 'inherit' });
+            execSync(`npx wp-scripts build ${relInputs} --output-path="${relBuildPath}"`, { stdio: 'inherit' });
+        }
     }
 
     // Compile SCSS from src/scss/ → build/

@@ -8,10 +8,14 @@ body {
   background-color: #000000;
 }
 
+main {
+  padding: 0 !important;
+}
+
 .wp-site-blocks .site-header-outer {
   position: relative;
   display: block;
-  height: 800px;
+  height: 840px;
   background-color: #ff9954;
   padding: 0;
 }
@@ -42,5 +46,4 @@ body {
 blockquote {
   padding: 0;
   margin: 0;
-  color: red;
 }

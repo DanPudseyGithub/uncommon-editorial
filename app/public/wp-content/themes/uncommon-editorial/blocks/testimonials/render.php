@@ -8,8 +8,16 @@ $wrapper_attributes = get_block_wrapper_attributes( [ 'class' => 'testimonials' 
 		<h2 class="testimonials__heading"><?php echo esc_html( $heading ); ?></h2>
 	<?php endif; ?>
 
-	<div class="testimonials__grid">
-		<?php echo $content; ?>
+	<div class="testimonials__runner">
+		<div class="testimonials__grid">
+			<?php echo $content; ?>
+		</div>
+	</div>
+
+	<div class="testimonials__scrollbar-wrapper">
+		<div class="testimonials__scrollbar">
+			<div class="testimonials__scrollbar-thumb"></div>
+		</div>
 	</div>
 
 </div>
