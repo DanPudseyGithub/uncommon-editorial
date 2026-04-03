@@ -52,6 +52,13 @@ main {
   height: auto;
 }
 
+.wp-block-template-part {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  z-index: 1 !important;
+}
+
 blockquote {
   padding: 0;
   margin: 0;
@@ -147,4 +154,11 @@ cite {
 .wp-block-heading {
   font-size: 24px;
   line-height: 33px;
+}
+
+input,
+textarea {
+  font-family: "PP Neue Montreal";
+  color: #000000;
+  font-weight: 500;
 }

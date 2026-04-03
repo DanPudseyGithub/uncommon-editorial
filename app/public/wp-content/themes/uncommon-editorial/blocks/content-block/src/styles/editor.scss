@@ -1,5 +1,6 @@
 .content-block {
   display: block;
+  padding: 20px $content-block-desktop-padding !important;
 
   &__heading {
     width: auto;

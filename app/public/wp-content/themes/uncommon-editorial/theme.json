@@ -700,6 +700,11 @@
 			"area": "uncategorized",
 			"name": "testimonials",
 			"title": "Testimonials"
+		},
+		{
+			"area": "uncategorized",
+			"name": "contact-form",
+			"title": "Contact Form"
 		}
 	],
 	"customTemplates": [
