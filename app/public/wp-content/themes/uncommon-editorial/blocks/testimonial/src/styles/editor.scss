@@ -9,10 +9,7 @@
   padding: 0;
   width: unset;
   margin: 0;
-
-  &__image {
-    max-width: 320px;
-  }
+  mask-image: none !important;
 
   blockquote {
     position: relative;
@@ -23,7 +20,7 @@
       font-size: 70px;
       position: absolute;
       left: -40px;
-      top: -20px;
+      top: 20px;
       font-family: cursive;
     }
   }

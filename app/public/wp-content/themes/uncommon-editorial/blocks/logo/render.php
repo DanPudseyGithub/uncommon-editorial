@@ -1,8 +1,10 @@
 <?php
 $svg_path = get_stylesheet_directory() . '/assets/images/logo.svg';
 
-if ( file_exists( $svg_path ) ) {
-    echo '<div class="site-logo">';
-    echo file_get_contents( $svg_path );
-    echo '</div>';
+if (file_exists($svg_path)) {
+  echo '<div class="site-logo">';
+  echo '<a href="/">';
+  echo file_get_contents($svg_path);
+  echo '</a>';
+  echo '</div>';
 }
