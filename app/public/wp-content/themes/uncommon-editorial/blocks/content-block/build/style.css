@@ -1,7 +1,8 @@
 .content-block {
   display: flex;
   align-items: flex-start;
-  padding: 0 97px;
+  max-width: 946px !important;
+  padding: 0 97px !important;
   gap: 40px;
 }
 .content-block.theme-2 {

@@ -1,9 +1,12 @@
 @use 'variables' as *;
 
+$content-block-desktop-padding: 97px;
+
 .content-block {
   display: flex;
   align-items: flex-start;
-  padding: 0 97px;
+  max-width: $max-component-width - ($content-block-desktop-padding * 2) !important;
+  padding: 0 $content-block-desktop-padding !important;
   gap: 40px;
 
   &.theme-2 {
