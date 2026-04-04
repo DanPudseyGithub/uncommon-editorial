@@ -1,9 +1,11 @@
 {
-  "apiVersion": 2,
+  "apiVersion": 3,
   "name": "uncommon-editorial/logo",
   "title": "Uncommon Editorial Logo",
   "category": "theme",
   "icon": "format-image",
+  "description": "Site logo SVG.",
+  "textdomain": "uncommon-editorial",
   "editorScript": "file:./build/index.js",
   "style": "file:./build/style.css",
   "editorStyle": "file:./build/editor.css",

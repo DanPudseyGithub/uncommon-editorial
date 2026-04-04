@@ -4,13 +4,7 @@
   "title": "Testimonials",
   "category": "theme",
   "icon": "format-quote",
-  "description": "Container for Testimonial blocks with a section heading.",
-  "attributes": {
-    "heading": {
-      "type": "string",
-      "default": ""
-    }
-  },
+  "description": "Container for Testimonial blocks.",
   "supports": {
     "html": false
   },

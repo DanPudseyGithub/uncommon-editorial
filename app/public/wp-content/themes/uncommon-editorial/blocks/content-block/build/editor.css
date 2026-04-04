@@ -1,5 +1,6 @@
 .content-block {
   display: block;
+  padding: 20px 97px !important;
 }
 .content-block__heading {
   width: auto;
