@@ -66,12 +66,18 @@
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: opacity 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
   border-radius: 8px;
   min-width: 100%;
 }
 .contact-form__form .wpcf7-form input[type=submit]:hover {
-  opacity: 0.85;
+  background-color: rgb(224.4, 134.64, 73.92);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+.contact-form__form .wpcf7-form input[type=submit]:active, .contact-form__form .wpcf7-form input[type=submit]:focus-visible {
+  background-color: rgb(198.9, 119.34, 65.52);
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 .contact-form__form .wpcf7-form .wpcf7-not-valid-tip {
   font-size: 16px;
@@ -83,6 +89,9 @@
   padding: 10px 16px;
   border: 1px solid currentColor;
   margin-top: 8px;
+  background-color: rgba(70, 180, 80, 0.1098039216);
+  border-color: #46b450;
+  border-radius: 8px;
 }
 .contact-form__form .wpcf7-form .wpcf7-response-output[aria-hidden=true] {
   display: none;

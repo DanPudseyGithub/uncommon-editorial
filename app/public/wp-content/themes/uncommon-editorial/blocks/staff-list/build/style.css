@@ -2,16 +2,16 @@
   position: relative !important;
   width: 100% !important;
   max-width: 100% !important;
-  z-index: 1 !important;
+  z-index: 2 !important;
 }
 .section-content > * {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 .section-content::after {
   content: "";
   position: absolute;
-  bottom: -78px;
+  bottom: -100px;
   height: 457px;
   left: 0;
   right: 0;
@@ -20,7 +20,7 @@
   background-image: url("data:image/svg+xml,%3Csvg width='1919' height='458' viewBox='0 0 1919 458' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1918.5 0.5H-3.5V457.2C166.028 451.785 491.147 424.914 511.847 424.914C532.548 424.914 1514.31 417.171 1918.5 438.199V218.699V0.5Z' fill='black' stroke='black'/%3E%3C/svg%3E");
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  z-index: 0;
+  z-index: 1;
 }
 
 .staff-list {

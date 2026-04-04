@@ -11,7 +11,17 @@
 
 .testimonials {
   padding: 40px 0;
-  width: 100%;
+  width: 100% !important;
+  max-width: 100% !important;
+
+  &__heading {
+    max-width: $max-component-width;
+    margin-top: 0;
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    color: brand-color('black');
+  }
 
   &__runner {
     width: 100%;

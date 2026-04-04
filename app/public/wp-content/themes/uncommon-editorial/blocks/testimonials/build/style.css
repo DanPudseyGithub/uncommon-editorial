@@ -9,7 +9,16 @@
 
 .testimonials {
   padding: 40px 0;
-  width: 100%;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+.testimonials__heading {
+  max-width: 1140px;
+  margin-top: 0;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #000000;
 }
 .testimonials__runner {
   width: 100%;
@@ -32,7 +41,7 @@
 .testimonials__scrollbar {
   position: relative;
   height: 8px;
-  background-color: #CB9F58;
+  background-color: #cb9f58;
   border-radius: 999px;
   cursor: pointer;
 }
@@ -41,7 +50,7 @@
   top: 0;
   left: 0;
   height: 100%;
-  background-color: #D37D14;
+  background-color: #d37d14;
   border-radius: 999px;
   cursor: grab;
 }

@@ -73,12 +73,20 @@
         font-size: 16px;
         font-weight: 600;
         cursor: pointer;
-        transition: opacity 0.2s ease;
+        transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
         border-radius: 8px;
         min-width: 100%;
 
         &:hover {
-          opacity: 0.85;
+          background-color: mix(brand-color('primary'), #000, 88%);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        &:active,
+        &:focus-visible {
+          background-color: mix(brand-color('primary'), #000, 78%);
+          transform: translateY(1px);
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
       }
 
@@ -93,6 +101,9 @@
         padding: 10px 16px;
         border: 1px solid currentColor;
         margin-top: 8px;
+        background-color: #46b4501c;
+        border-color: #46b450;
+        border-radius: 8px;
 
         &[aria-hidden='true'] {
           display: none;
