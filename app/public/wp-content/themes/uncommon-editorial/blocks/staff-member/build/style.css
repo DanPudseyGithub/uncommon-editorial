@@ -1,11 +1,13 @@
 .staff-member {
   display: flex;
   align-items: flex-start;
+  flex-direction: column;
   padding: 0 10px;
   gap: 40px;
 }
 @media (min-width: 768px) {
   .staff-member {
+    flex-direction: row;
     padding: 0 97px;
   }
 }

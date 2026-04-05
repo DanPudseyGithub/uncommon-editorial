@@ -6,14 +6,13 @@
   padding-left: 10px;
   padding-right: 10px;
 
-  @include media('>=tablet') {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
   &__heading {
     margin-top: 0;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+
+    @include media('>=desktop') {
+      margin-bottom: 40px;
+    }
   }
 
   &__form {

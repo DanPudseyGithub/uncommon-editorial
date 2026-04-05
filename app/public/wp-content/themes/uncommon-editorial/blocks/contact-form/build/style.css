@@ -3,15 +3,14 @@
   padding-left: 10px;
   padding-right: 10px;
 }
-@media (min-width: 768px) {
-  .contact-form {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
 .contact-form__heading {
   margin-top: 0;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+}
+@media (min-width: 1024px) {
+  .contact-form__heading {
+    margin-bottom: 40px;
+  }
 }
 .contact-form__form {
   width: calc(100% - 20px);

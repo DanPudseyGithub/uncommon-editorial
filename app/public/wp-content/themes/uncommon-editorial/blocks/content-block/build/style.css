@@ -10,7 +10,6 @@
   .content-block {
     gap: 40px;
     flex-direction: row;
-    height: 560px;
     max-width: 946px !important;
     padding: 0 97px !important;
   }
@@ -52,10 +51,18 @@
 .content-block.theme-1 .content-block__heading {
   text-align: right;
 }
-.content-block.theme-2 .content-block__header {
-  order: 2;
+@media (min-width: 768px) {
+  .content-block.theme-2 .content-block__header {
+    order: 2;
+  }
 }
-.content-block.theme-2 .content-block__content-wrapper {
-  order: 1;
-  text-align: right;
+@media (min-width: 768px) {
+  .content-block.theme-2 .content-block__content-wrapper {
+    order: 1;
+  }
+}
+@media (min-width: 768px) {
+  .content-block.theme-2 .content-block__content-wrapper {
+    text-align: right;
+  }
 }

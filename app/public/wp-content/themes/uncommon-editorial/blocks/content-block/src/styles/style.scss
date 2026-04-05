@@ -11,7 +11,6 @@
   @include media('>=tablet') {
     gap: 40px;
     flex-direction: row;
-    height: 560px;
     max-width: $max-component-width - ($content-block-desktop-padding * 2) !important;
     padding: 0 $content-block-desktop-padding !important;
   }
@@ -68,12 +67,19 @@
 
   &.theme-2 {
     .content-block__header {
-      order: 2;
+      @include media('>=tablet') {
+        order: 2;
+      }
     }
 
     .content-block__content-wrapper {
-      order: 1;
-      text-align: right;
+      @include media('>=tablet') {
+        order: 1;
+      }
+
+      @include media('>=tablet') {
+        text-align: right;
+      }
     }
   }
 }
