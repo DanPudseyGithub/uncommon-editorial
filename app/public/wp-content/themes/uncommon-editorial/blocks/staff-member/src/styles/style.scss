@@ -8,14 +8,23 @@ $staff-photo-mask-2: url("data:image/svg+xml,%3Csvg width='252' height='267' vie
 .staff-member {
   display: flex;
   align-items: flex-start;
-  padding: 0 97px;
+  padding: 0 10px;
   gap: 40px;
 
+  @include media('>=tablet') {
+    padding: 0 97px;
+  }
+
   &__image {
-    width: 254px;
-    height: 254px;
+    width: 100%;
+    height: auto;
     aspect-ratio: 1/1;
     margin-bottom: 10px;
+
+    @include media('>=tablet') {
+      width: 254px;
+      height: 254px;
+    }
 
     img {
       width: 100%;

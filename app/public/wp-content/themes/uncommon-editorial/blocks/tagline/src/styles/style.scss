@@ -1,18 +1,35 @@
 @use 'variables' as *;
 
 .tagline {
-  font-family: $font-family-sans;
-  font-weight: 500;
-  font-size: 24px;
-  display: flex;
+  display: flow;
   align-items: baseline;
   gap: 4px;
+  padding-right: 30vw;
+
+  @include media('>=tablet') {
+    display: flex;
+    padding-right: 0;
+  }
+
+  &__intro {
+    font-family: $font-family-sans;
+    font-weight: 500;
+    font-size: 16px;
+
+    @include media('>=tablet') {
+      font-size: 18px;
+    }
+  }
 
   &__scroll-container {
     overflow: hidden;
-    height: 1.2em;
+    height: 22px;
     display: inline-block;
     vertical-align: bottom;
+
+    @include media('>=tablet') {
+      height: 24px;
+    }
   }
 
   &__words {
@@ -25,5 +42,12 @@
     display: block;
     line-height: 1.2;
     white-space: nowrap;
+    font-family: $font-family-sans;
+    font-weight: 500;
+    font-size: 16px;
+
+    @include media('>=tablet') {
+      font-size: 18px;
+    }
   }
 }

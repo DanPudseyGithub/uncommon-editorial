@@ -1,16 +1,35 @@
 .tagline {
-  font-family: "PP Neue Montreal";
-  font-weight: 500;
-  font-size: 24px;
-  display: flex;
+  display: flow;
   align-items: baseline;
   gap: 4px;
+  padding-right: 30vw;
+}
+@media (min-width: 768px) {
+  .tagline {
+    display: flex;
+    padding-right: 0;
+  }
+}
+.tagline__intro {
+  font-family: "PP Neue Montreal";
+  font-weight: 500;
+  font-size: 16px;
+}
+@media (min-width: 768px) {
+  .tagline__intro {
+    font-size: 18px;
+  }
 }
 .tagline__scroll-container {
   overflow: hidden;
-  height: 1.2em;
+  height: 22px;
   display: inline-block;
   vertical-align: bottom;
+}
+@media (min-width: 768px) {
+  .tagline__scroll-container {
+    height: 24px;
+  }
 }
 .tagline__words {
   display: flex;
@@ -21,4 +40,12 @@
   display: block;
   line-height: 1.2;
   white-space: nowrap;
+  font-family: "PP Neue Montreal";
+  font-weight: 500;
+  font-size: 16px;
+}
+@media (min-width: 768px) {
+  .tagline__word {
+    font-size: 18px;
+  }
 }

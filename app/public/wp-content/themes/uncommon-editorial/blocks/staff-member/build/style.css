@@ -1,14 +1,25 @@
 .staff-member {
   display: flex;
   align-items: flex-start;
-  padding: 0 97px;
+  padding: 0 10px;
   gap: 40px;
 }
+@media (min-width: 768px) {
+  .staff-member {
+    padding: 0 97px;
+  }
+}
 .staff-member__image {
-  width: 254px;
-  height: 254px;
+  width: 100%;
+  height: auto;
   aspect-ratio: 1/1;
   margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+  .staff-member__image {
+    width: 254px;
+    height: 254px;
+  }
 }
 .staff-member__image img {
   width: 100%;

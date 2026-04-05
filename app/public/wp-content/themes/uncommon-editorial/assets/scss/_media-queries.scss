@@ -1,0 +1,82 @@
+@use 'sass:map';
+@use 'sass:string';
+@use 'sass:list';
+
+$breakpoints: (
+  'all': 0px,
+  'mobile': 320px,
+  'mediumMobile': 375px,
+  'largeMobile': 414px,
+  'tablet': 768px,
+  'desktop': 1024px,
+  'desktop-14': 1512px,
+  'desktop-16': 1728px,
+  'desktop-wide': 1920px,
+) !default;
+
+// Returns the operator from an expression like '>=tablet' or '<desktop'
+@function _mq-operator($expression) {
+  @each $op in ('>=', '<=', '>', '<') {
+    @if string.index($expression, $op) {
+      @return $op;
+    }
+  }
+  @error 'No operator found in `#{$expression}`.';
+}
+
+// Returns the resolved px value for a breakpoint expression
+@function _mq-value($expression, $operator) {
+  $op-length: string.length($operator);
+  $op-index: string.index($expression, $operator);
+  $key: string.slice($expression, $op-index + $op-length);
+
+  @if not map.has-key($breakpoints, $key) {
+    @error 'Unknown breakpoint `#{$key}`. Available: #{map.keys($breakpoints)}';
+  }
+
+  $px: map.get($breakpoints, $key);
+
+  @if $operator == '>'  { @return $px + 1px; }
+  @if $operator == '<'  { @return $px - 1px; }
+
+  @return $px;
+}
+
+///
+/// Generates a media query from one or more breakpoint expressions.
+///
+/// Operators: >= > <= <
+///
+/// @example
+///   @include media('>=tablet') { … }
+///   @include media('>desktop', '<=desktop-wide') { … }
+///
+@mixin media($conditions...) {
+  $parts: ();
+
+  @each $condition in $conditions {
+    $operator: _mq-operator($condition);
+    $value: _mq-value($condition, $operator);
+    $is-min: list.index(('>=', '>'), $operator) != null;
+
+    @if $is-min {
+      $parts: list.append($parts, '(min-width: #{$value})');
+    } @else {
+      $parts: list.append($parts, '(max-width: #{$value})');
+    }
+  }
+
+  // Join multiple conditions with 'and'
+  $query: '';
+  @each $part in $parts {
+    @if $query == '' {
+      $query: $part;
+    } @else {
+      $query: '#{$query} and #{$part}';
+    }
+  }
+
+  @media #{$query} {
+    @content;
+  }
+}

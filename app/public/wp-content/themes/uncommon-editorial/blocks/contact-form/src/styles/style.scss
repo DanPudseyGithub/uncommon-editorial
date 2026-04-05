@@ -3,6 +3,13 @@
 
 .contact-form {
   padding-top: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  @include media('>=tablet') {
+    padding-left: 0;
+    padding-right: 0;
+  }
 
   &__heading {
     margin-top: 0;
@@ -10,11 +17,18 @@
   }
 
   &__form {
-    width: 380px;
+    $form-padding: 10px;
+    width: calc(100% - ($form-padding * 2));
     background-color: brand-color('white');
-    padding: 24px;
+    padding: $form-padding;
     margin-top: 40px;
     border-radius: 8px;
+
+    @include media('>=tablet') {
+      $form-padding: 24px;
+      width: 380px;
+      padding: $form-padding;
+    }
 
     .wpcf7-form {
       display: flex;
@@ -74,7 +88,10 @@
         font-size: 16px;
         font-weight: 600;
         cursor: pointer;
-        transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+        transition:
+          background-color 0.2s ease,
+          transform 0.1s ease,
+          box-shadow 0.2s ease;
         border-radius: 8px;
         min-width: 100%;
 
@@ -123,9 +140,14 @@
 
       > strong {
         display: block;
-        font-size: 22px;
-        line-height: 30.5px;
         margin-bottom: 10px;
+        font-size: 20px;
+        line-height: 27px;
+
+        @include media('>=tablet') {
+          font-size: 22px;
+          line-height: 30.5px;
+        }
       }
     }
   }

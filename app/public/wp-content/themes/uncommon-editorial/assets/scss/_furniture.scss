@@ -15,38 +15,93 @@ main {
 }
 
 // Components
+.site-logo {
+  a {
+    display: block;
+  }
+
+  svg {
+    height: auto;
+    width: 80%;
+
+    @include media('>=mediumMobile') {
+      width: 320px;
+    }
+
+    @include media('>=largeMobile') {
+      width: 340px;
+    }
+
+    @include media('>=tablet') {
+      width: 420px;
+    }
+
+    @include media('>=desktop') {
+      width: 620px;
+    }
+  }
+}
+
 .wp-site-blocks {
   .site-header-outer {
     position: relative;
     display: block;
-    height: 840px;
+    height: 54vw;
     background-color: brand-color('primary');
     padding: 0;
   }
 
   .site-header-inner {
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     gap: 0;
     justify-content: flex-start;
     align-items: flex-start;
-    padding-top: 90px;
+    padding-top: 20px;
+    padding-left: 10px;
     max-width: $max-component-width;
     margin: auto;
+
+    @include media('>=tablet') {
+      padding-top: 40px;
+    }
+
+    @include media('>=desktop') {
+      padding-top: 90px;
+    }
   }
 
   .site-header-graphic {
+    display: block;
     position: absolute;
     top: -20px;
     left: 0;
     right: 0;
     width: 100%;
     pointer-events: none;
-    max-width: none;
+    max-width: 1920px;
 
     svg {
       width: 100%;
       height: auto;
+    }
+
+    &__mobile {
+      display: block;
+
+      @include media('>=mediumMobile') {
+        display: none;
+      }
+    }
+
+    &__desktop {
+      display: none;
+
+      @include media('>=mediumMobile') {
+        display: block;
+      }
     }
   }
 }
