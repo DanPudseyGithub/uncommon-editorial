@@ -14,10 +14,10 @@
   &__intro {
     font-family: $font-family-sans;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
 
     @include media('>=tablet') {
-      font-size: 18px;
+      font-size: 28px;
     }
   }
 
@@ -28,7 +28,7 @@
     vertical-align: bottom;
 
     @include media('>=tablet') {
-      height: 24px;
+      height: 32px;
     }
   }
 
@@ -44,10 +44,10 @@
     white-space: nowrap;
     font-family: $font-family-sans;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
 
     @include media('>=tablet') {
-      font-size: 18px;
+      font-size: 28px;
     }
   }
 }

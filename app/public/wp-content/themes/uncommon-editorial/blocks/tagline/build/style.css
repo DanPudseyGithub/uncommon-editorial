@@ -13,11 +13,11 @@
 .tagline__intro {
   font-family: "PP Neue Montreal";
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
 }
 @media (min-width: 768px) {
   .tagline__intro {
-    font-size: 18px;
+    font-size: 28px;
   }
 }
 .tagline__scroll-container {
@@ -28,7 +28,7 @@
 }
 @media (min-width: 768px) {
   .tagline__scroll-container {
-    height: 24px;
+    height: 32px;
   }
 }
 .tagline__words {
@@ -42,10 +42,10 @@
   white-space: nowrap;
   font-family: "PP Neue Montreal";
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
 }
 @media (min-width: 768px) {
   .tagline__word {
-    font-size: 18px;
+    font-size: 28px;
   }
 }
