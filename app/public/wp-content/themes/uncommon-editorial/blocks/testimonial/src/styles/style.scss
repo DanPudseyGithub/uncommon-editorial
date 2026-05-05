@@ -9,24 +9,25 @@
   padding: 46px 34px;
   margin: 0;
   background-color: brand-color('primary');
+  min-height: 472px;
   mask-size: 320px 100%;
   mask-repeat: no-repeat;
   mask-position: 100% 100%;
 
   &:nth-child(4n + 1) {
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 310 472' width='317' height='472' fill='none'%3E%3Cpath fill='white' d='M293 23.5 0 0v458l317 14V357.5z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 310 472' width='317' height='472' preserveAspectRatio='none' fill='none'%3E%3Cpath fill='white' d='M293 23.5 0 0v458l317 14V357.5z'/%3E%3C/svg%3E");
   }
 
   &:nth-child(4n + 2) {
-    mask-image: url("data:image/svg+xml,%3Csvg width='310' height='472' viewBox='0 0 310 472' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M302 0H9L0 472H302L310 242L302 0Z' fill='white'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg width='310' height='472' viewBox='0 0 310 472' preserveAspectRatio='none' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M302 0H9L0 472H302L310 242L302 0Z' fill='white'/%3E%3C/svg%3E");
   }
 
   &:nth-child(4n + 3) {
-    mask-image: url("data:image/svg+xml,%3Csvg width='317' height='472' viewBox='0 0 317 472' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M293 23.5L0 0V458L317 472V357.5L293 23.5Z' fill='white'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg width='317' height='472' viewBox='0 0 317 472' preserveAspectRatio='none' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M293 23.5L0 0V458L317 472V357.5L293 23.5Z' fill='white'/%3E%3C/svg%3E");
   }
 
   &:nth-child(4n + 4) {
-    mask-image: url("data:image/svg+xml,%3Csvg width='310' height='472' viewBox='0 0 310 472' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M302 0H9L0 472H302L310 242L302 0Z' fill='white'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg width='310' height='472' viewBox='0 0 310 472' preserveAspectRatio='none' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M302 0H9L0 472H302L310 242L302 0Z' fill='white'/%3E%3C/svg%3E");
   }
 
   &__upper {
